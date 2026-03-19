@@ -1,0 +1,65 @@
+package application;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+import entities.BankAccount;
+
+public class ProgramBankAccount {
+	public static void main(String[] args) {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		
+		
+		System.out.println("Digite o nome do usuário: ");
+		String usuario = sc.nextLine();
+		
+		System.out.println("Digite o saldo inicial: ");
+		double saldoInicial = sc.nextDouble();
+		
+		
+		BankAccount account = new BankAccount(usuario, saldoInicial);
+		
+		
+		
+		int option = 0;
+		
+		while(option != 4) {
+			System.out.println("\n---Menu---");
+			System.out.println("1 - Depositar");
+			System.out.println("2 - Sacar");
+			System.out.println("3 - Ver saldo");
+			System.out.println("4 - Sair");
+			System.out.println("Escolha: ");
+			option = sc.nextInt();
+			
+			if(option == 1) {
+				System.out.println("Valor do depósito: ");
+				double valor = sc.nextDouble();
+				account.Depositar(valor);
+				
+			} else if(option == 2) {
+				System.out.println("Valor de saque: ");
+				double valor = sc.nextDouble();
+				account.Retirar(valor);
+				
+			} else if(option == 3) {
+				System.out.println("Valor do saldo: " + account.Getsaldo());
+				
+			} else if(option == 4) {
+				System.out.println("Saindo...");
+				
+			} else {
+				System.out.println("Opção inválida.");
+				
+			}
+		}
+			
+		
+		System.out.println("\nPrograma encerrado.");
+			
+		
+		sc.close();
+	}	
+}
