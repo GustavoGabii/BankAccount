@@ -3,7 +3,7 @@ package application;
 import java.util.Locale;
 import java.util.Scanner;
 
-import entities.BankAccount;
+import entities.BankAcc;
 
 public class ProgramBankAccount {
 	public static void main(String[] args) {
